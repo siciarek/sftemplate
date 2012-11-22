@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+
+<project name="sescrm" default="cc" basedir=".">
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+
+    <target name="up">
+        <exec executable="php">
+            <arg line="composer.phar update"/>
+        </exec>
+    </target>
+
+    <target name="db">
+
+        <exec executable="php">
+            <arg line="app/console doctrine:database:drop --force"/>
+        </exec>
+
+        <exec executable="php">
+            <arg line="app/console doctrine:database:create"/>
+        </exec>
+
+        <exec executable="php">
+            <arg line="app/console doctrine:schema:update --force"/>
+        </exec>
+
+    </target>
+
+    <target name="fix">
+        <exec executable="php">
+            <arg line="app/console doctrine:fixtures:load --no-interaction"/>
+        </exec>
+    </target>
+
+    <target name="ax" depends="cc">
+        <delete verbose="true" includeemptydirs="true">
+            <fileset dir="web/css" includes="**/*"/>
+            <fileset dir="web/images" includes="**/*"/>
+            <fileset dir="web/js" includes="**/*"/>
+        </delete>
+        <exec executable="php">
+            <arg line="app/console assets:install"/>
+        </exec>
+        <exec executable="php">
+            <arg line="app/console assetic:dump"/>
+        </exec>
+    </target>
+
+    <target name="a" depends="cc">
+        <exec executable="php">
+            <arg line="app/console assets:install"/>
+        </exec>
+    </target>
+
+    <target name="cc">
+        <delete verbose="true" includeemptydirs="true">
+            <fileset dir="app/cache" excludes=".gitkeep" includes="**/*"/>
+            <fileset dir="app/logs" excludes=".gitkeep" includes="**/*"/>
+        </delete>
+    </target>
+
+</project>
+
