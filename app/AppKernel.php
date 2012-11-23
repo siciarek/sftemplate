@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+
             new FOS\UserBundle\FOSUserBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
@@ -28,6 +29,7 @@ class AppKernel extends Kernel
 
             // CustomBundles:
 
+            new MyApp\UserBundle\MyAppUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

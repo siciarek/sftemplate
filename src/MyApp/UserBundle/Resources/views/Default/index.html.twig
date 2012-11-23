@@ -1,0 +1,9 @@
+{% extends 'MyAppUserBundle::public.layout.html.twig' %}
+{% block content %}
+<h1>{{ "Welcome" | trans() }}!</h1>
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<p>{{ link_to('layout.logout'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_logout") }}</p>
+{% endif %}
+
+{% endblock %}

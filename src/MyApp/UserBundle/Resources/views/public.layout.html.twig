@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{{ "My App" | trans() }}
+        :: {% if title is defined %}{{ title | trans() }}{% else %}{{ "Web application template" | trans() }}{% endif %}</title>
+    <link rel="icon" sizes="16x16" href="{{ asset("favicon.ico") }}"/>
+
+    {% stylesheets
+    '@MyAppUserBundle/Resources/public/css/icons.css'
+    '@MyAppUserBundle/Resources/public/css/main.css' %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+
+    <script type="text/javascript">
+        function __(phrase) {
+            return phrase;
+        }
+    </script>
+
+    {% javascripts
+    '@MyAppUserBundle/Resources/public/js/jquery-1.8.3.min.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% block jsinclude %}{% endblock %}
+
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

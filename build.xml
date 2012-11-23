@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project>
 
-<project name="sescrm" default="cc" basedir=".">
+<project name="myapp" default="cc" basedir=".">
 
     <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 
-    <target name="up">
+    <property name="entities.list" value="Group,User" />
+
+    <target name="ge">
+        <foreach target="genenerate-entity" param="entity" list="${entities.list}"/>
+    </target>
+
+    <target name="genenerate-entity">
         <exec executable="php">
-            <arg line="composer.phar update"/>
+            <arg line="app/console doctrine:generate:entities MyAppUserBundle:${entity} --path=src --no-backup"/>
         </exec>
     </target>
 
-    <target name="db">
+    <target name="db" depends="ge">
 
         <exec executable="php">
             <arg line="app/console doctrine:database:drop --force"/>
@@ -58,6 +64,12 @@
             <fileset dir="app/cache" excludes=".gitkeep" includes="**/*"/>
             <fileset dir="app/logs" excludes=".gitkeep" includes="**/*"/>
         </delete>
+    </target>
+
+    <target name="up">
+        <exec executable="php">
+            <arg line="composer.phar update"/>
+        </exec>
     </target>
 
 </project>

@@ -1,0 +1,13 @@
+{% extends 'MyAppUserBundle::layout.html.twig' %}
+{% block content %}
+    <style type="text/css">
+        body {
+            color: red;
+        }
+    </style>
+
+    <h1>{{ "Secured page" | trans() }}!</h1>
+
+    <p>{{ link_to('layout.logout'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_logout") }}</p>
+
+{% endblock %}
