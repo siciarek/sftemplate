@@ -21,16 +21,28 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $obj = new Group("owners");
-        $obj->setDescription("Account owners");
-        $manager->persist($obj);
-        $manager->flush();
-        $this->addReference("account-owners", $obj);
+        $objs = array(
+            array(
+                "name" => "sysadmins",
+                "description" => "System administrators",
+            ),
+            array(
+                "name" => "owners",
+                "description" => "Account owners",
+            ),
+            array(
+                "name" => "users",
+                "description" => "Regular users",
+            ),
+        );
 
-        $obj = new Group("users");
-        $obj->setDescription("Regular users");
-        $manager->persist($obj);
-        $manager->flush();
-        $this->addReference("regular-users", $obj);
+        foreach ($objs as $o) {
+            $obj = new Group($o["name"]);
+            $obj->setDescription($o["description"]);
+            $manager->persist($obj);
+            $manager->flush();
+            $this->addReference($o["name"], $obj);
+        }
+
     }
 }

@@ -22,18 +22,43 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
     {
         $password = "helloworld";
 
-        $obj = new User();
-        $obj->setUsername("siciarek");
-        $obj->setFirstName("Jacek");
-        $obj->setLastName("Siciarek");
-        $obj->setDescription("My App Developer");
-        $obj->setEmail("siciarek@gmail.com");
-        $obj->setPlainPassword($password);
-        $obj->setEnabled(true);
-        $obj->addRole("ROLE_SUPER_ADMIN");
-        $om->persist($obj);
+        $objs = array(
+            array(
+                "username"    => "siciarek",
+                "password"    => $password,
+                "first_name"  => "Jacek",
+                "last_name"   => "Siciarek",
+                "description" => "My App Developer",
+                "email"       => "siciarek@gmail.com",
+                "group"       => "owners",
+            ),
+            array(
+                "username"    => "asiciarek",
+                "password"    => $password,
+                "first_name"  => "Anna",
+                "last_name"   => "Siciarek",
+                "description" => "The Wife of My App Developer",
+                "email"       => "anna_siciarek@o2.pl",
+                "group"       => "owners",
+            ),
+        );
+
+        foreach ($objs as $o) {
+            $obj = new User();
+            $obj->setUsername($o["username"]);
+            $obj->setFirstName($o["first_name"]);
+            $obj->setLastName($o["last_name"]);
+            $obj->setDescription($o["description"]);
+            $obj->setEmail($o["email"]);
+            $obj->setPlainPassword($o["password"]);
+            $obj->setEnabled(true);
+            $obj->setSuperAdmin(true);
+            $obj->addGroup($this->getReference($o["group"]));
+            $om->persist($obj);
+            $this->addReference($o["username"], $obj);
+        }
+
         $om->flush();
-        
-        $this->addReference("user-siciarek", $obj);
+
     }
- }
+}
