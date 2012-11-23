@@ -1,4 +1,4 @@
-myevent
+myappp
 =======
 
-Personal events management app
+Ready to use web application's template in Symfony 2
