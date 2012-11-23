@@ -28,7 +28,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/secured.html", name="_secured_page")
+     * @Route("/secured.html", name="_secured")
      * @Template()
      */
     public function securedAction()

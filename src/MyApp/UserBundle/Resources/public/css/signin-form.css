@@ -1,0 +1,44 @@
+/* SIGNING FORM */
+
+div#signin-form {
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+div#signin-form td,
+div#signin-form th {
+    vertical-align: top;
+    text-align: right;
+    padding: 3px;
+}
+
+div#signin-form td {
+    text-align: left;
+}
+
+div#signin-form th {
+    color: #18557F;
+    font-size: 16px;
+    padding-right: 6px;
+}
+
+div#signin-form td input[type="text"],
+div#signin-form td input[type="password"],
+div#signin-form td input[type="submit"]
+{
+    width: 200px;
+}
+
+div#signin-form td input[type="submit"]
+{
+    width: 204px;
+    height: 42px;
+}
+
+div#signin-form td input[type="checkbox"] {
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    margin-left: 3px;
+}
