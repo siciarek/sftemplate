@@ -32,7 +32,8 @@ security:
 
         - { path: ^/$,             role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/public.html$,  role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/editor.html$,  role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/editor.html$,  role: ROLE_ADMIN }
         - { path: ^/secured.html$, role: ROLE_ADMIN }
 
     role_hierarchy:
