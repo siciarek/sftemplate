@@ -12,6 +12,7 @@
     '@MyAppUserBundle/Resources/public/css/main.css'
     '@MyAppUserBundle/Resources/public/css/menu.css'
     '@MyAppUserBundle/Resources/public/css/signin-form.css'
+    '@MyAppUserBundle/Resources/public/css/tinymce.css'
     output="css/myapp.css" %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
     {% endstylesheets %}
@@ -36,14 +37,16 @@
             <li>{{ link_to("Public page" | trans(), "_public") }}</li>
 
             {% if app.user %}
-            <li>{{ link_to("Secured page" | trans(), "_secured") }}</li>
+                <li>{{ link_to("Secured page" | trans(), "_secured") }}</li>
+                <li>{{ link_to("Editor" | trans(), "_editor") }}</li>
             {% endif %}
 
-            <li class="access">{% if app.user %}
-                {{ link_to('layout.logout'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_logout") }}
+            {% if app.user %}
+                <li>{{ link_to('layout.logout'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_logout") }}</li>
+                <li class="user"><a>{{ "user" | trans() ~ ": " ~ app.user.firstname ~ " " ~ app.user.lastname }}</a></li>
             {% else %}
-                {{ link_to('layout.login'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_login") }}
-            {% endif %}</li>
+                <li>{{ link_to('layout.login'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_login") }}</li>
+            {% endif %}
         </ul>
     </div>
 </div>

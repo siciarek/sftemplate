@@ -24,7 +24,7 @@ class DefaultController extends Controller
      */
     public function publicAction()
     {
-        return array();
+        return array("title" => "Public page");
     }
 
     /**
@@ -34,6 +34,15 @@ class DefaultController extends Controller
     public function securedAction()
     {
         return array("title" => "Secured page");
+    }
+
+    /**
+     * @Route("/editor.html", name="_editor")
+     * @Template()
+     */
+    public function editorAction()
+    {
+        return array("title" => "Editor");
     }
 
     public function getTokenAction()

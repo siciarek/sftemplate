@@ -9,13 +9,14 @@ body {
 
 div#page-wrapper,
 div#page-footer-wrapper {
-    padding: 34px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     width: 100%;
 }
 
 div#page-content,
 div#page-footer  {
-    width: 1150px;
+    min-width: 800px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
@@ -35,6 +36,7 @@ div#page-content h1 {
     font: 22px/30px Verdana,Arial,Helvetica,sans-serif;
     letter-spacing: -0.5px;
     padding: 8px 0;
+    text-shadow: 1px 1px silver;
 }
 
 div#page-content p {

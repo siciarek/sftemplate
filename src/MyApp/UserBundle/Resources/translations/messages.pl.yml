@@ -7,6 +7,7 @@
 "Home" : "Strona główna"
 "Secured page" : "Strona zabezpieczona"
 "Public page" : "Strona publiczna"
+"Editor" : "Edytor"
 
 # Login form:
 
@@ -14,3 +15,8 @@
 "Username or E-Mail" : "Login lub email"
 "Password"           : "Hasło"
 "Remember"           : "Zapamiętaj mnie"
+
+# Other:
+
+"user" : "użytkownik"
+"Save" : "Zachowaj"

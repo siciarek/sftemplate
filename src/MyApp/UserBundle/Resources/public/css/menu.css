@@ -5,9 +5,6 @@ div#menu {
     min-width: 1150px;
     width: 100%;
     padding-bottom: 2px;
-    position: fixed;
-    left: 0;
-    top: 0;
     z-index: 100;
 }
 
@@ -42,11 +39,19 @@ div#menu div ul li a {
     padding: 0 14px 3px;
 }
 
-div#menu div ul li:hover a  {
+div#menu div ul li:hover a {
     background: #2186A0;
 }
 
-div#menu li.access {
+div#menu div ul li.user {
+    color: yellow;
     float: right;
     position: relative;
+}
+div#menu div ul li.user a {
+    color: white;
+}
+
+div#menu div ul li.user:hover a {
+    background: transparent;
 }
