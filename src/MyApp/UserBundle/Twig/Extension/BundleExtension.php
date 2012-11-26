@@ -101,15 +101,7 @@ class BundleExtension extends \Twig_Extension
 
     public function link_to($name, $routeName = null, $params = array(), $options = array())
     {
-        if ($name === null or is_array($name)) {
-            if (is_array($name) and is_object(json_decode(json_encode($name)))) {
-                foreach ($name as $key => $value) {
-                    if (!array_key_exists($key, $attrs)) {
-                        $attrs[$key] = $value;
-                    }
-                }
-            }
-        }
+        $url = $name;
 
         if ($routeName !== null) {
             $url = $this->url_for($routeName, $params);
@@ -120,6 +112,10 @@ class BundleExtension extends \Twig_Extension
 
         if (!array_key_exists("title", $options)) {
             $options["title"] = $name;
+        }
+
+        if($url === $name) {
+            unset($options["title"]);
         }
 
         foreach ($options as $key => $value) {

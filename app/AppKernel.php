@@ -29,6 +29,7 @@ class AppKernel extends Kernel
 
             // CustomBundles:
 
+            new FOQ\AlbumBundle\FOQAlbumBundle(),
             new MyApp\UserBundle\MyAppUserBundle(),
         );
 

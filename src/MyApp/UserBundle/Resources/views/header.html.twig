@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>{{ "My App" | trans() }}
-        :: {% if title is defined %}{{ title | trans() }}{% else %}{{ "Web application template" | trans() }}{% endif %}</title>
+    <title>{{ name | trans() }}
+        :: {% if title is defined %}{{ title | trans() }}{% else %}{{ description | trans() }}{% endif %}</title>
     <link rel="icon" sizes="16x16" href="{{ asset("favicon.ico") }}"/>
 
     {% stylesheets
