@@ -41,13 +41,7 @@
         </exec>
     </target>
 
-    <target name="ax" depends="cc">
-        <delete verbose="true" includeemptydirs="true">
-            <fileset dir="web/bundles/myappuser" includes="**/*"/>
-            <fileset dir="web/css" includes="**/*"/>
-            <fileset dir="web/images" includes="**/*"/>
-            <fileset dir="web/js" includes="**/*"/>
-        </delete>
+    <target name="ax" depends="cc, reset">
         <exec executable="php">
             <arg line="app/console assets:install web"/>
         </exec>
@@ -58,7 +52,7 @@
 
     <target name="a" depends="cc">
         <exec executable="php">
-            <arg line="app/console assets:install"/>
+            <arg line="app/console assets:install web"/>
         </exec>
     </target>
 
@@ -73,6 +67,18 @@
         <exec executable="php">
             <arg line="composer.phar update"/>
         </exec>
+    </target>
+
+    <target name="reset">
+        <delete dir="web/bundles" verbose="true" />
+        <delete dir="web/js" verbose="true" />
+        <delete dir="web/css" verbose="true" />
+        <delete dir="web/images" verbose="true" />
+
+        <mkdir dir="web/bundles"/>
+        <mkdir dir="web/js"/>
+        <mkdir dir="web/css"/>
+        <mkdir dir="web/images"/>
     </target>
 
 </project>
