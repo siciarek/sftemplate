@@ -3,9 +3,11 @@
 
 <project name="myapp" default="build-all-load" basedir=".">
 
-    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
-
     <property name="entities.list" value="Group,User" />
+
+
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
 
     <target name="build-all-load" depends="cc, db, fix, ax, cc" />
 
@@ -45,14 +47,11 @@
         <exec executable="php">
             <arg line="app/console assets:install web"/>
         </exec>
+        <copy todir="web/images">
+            <fileset dir="web/bundles/myappuser/images" includes="**/*"/>
+        </copy>
         <exec executable="php">
             <arg line="app/console assetic:dump --no-debug"/>
-        </exec>
-    </target>
-
-    <target name="a" depends="cc">
-        <exec executable="php">
-            <arg line="app/console assets:install web"/>
         </exec>
     </target>
 
@@ -80,6 +79,7 @@
         <mkdir dir="web/css"/>
         <mkdir dir="web/images"/>
     </target>
+
 
 </project>
 
