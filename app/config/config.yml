@@ -32,7 +32,6 @@ assetic:
     bundles:
       - FOSUserBundle
       - MyAppUserBundle
-      - FOQAlbumBundle
 
     #java: /usr/bin/java
     filters:
