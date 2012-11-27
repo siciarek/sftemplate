@@ -17,6 +17,23 @@ class WebServiceController extends Controller
 {
     private $frames = array();
 
+    /**
+     * @Route("/lang-{locale}.html", name="_change_locale", defaults={"locale"="pl"}, requirements = {"locale"="^[a-z]{2}$"})
+     * @Template()
+     */
+    public function setLocaleAction($locale) {
+
+        $locale = in_array($locale, array("en", "pl")) ? $locale : "en";
+
+        $session = $this->getRequest()->getSession();
+        $session->set("locale", $locale);
+
+        $referer = $this->getRequest()->server->get('HTTP_REFERER');
+        $referer = $referer == null ? $this->generateUrl("_homepage") : $referer;
+
+        return $this->redirect($referer);
+    }
+
     public function emailAction()
     {
         $frame = array();

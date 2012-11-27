@@ -45,6 +45,11 @@ class DefaultController extends Controller
         return array("title" => "Editor");
     }
 
+    function preExecute() {
+        $session = $this->getRequest()->getSession();
+        $this->getRequest()->setLocale($session->get("locale", $this->getRequest()->getLocale()));
+    }
+
     public function getTokenAction()
     {
         return new Response($this->container->get('form.csrf_provider')

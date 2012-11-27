@@ -35,18 +35,20 @@
         <ul>
             <li>{{ link_to("Home" | trans(), "_homepage") }}</li>
             <li>{{ link_to("Public page" | trans(), "_public") }}</li>
+            <li>{{ link_to("pl", "_change_locale") }}</li>
+            <li>{{ link_to("en", "_change_locale", {locale: "en"}) }}</li>
 
-            {% if app.user %}
-                <li>{{ link_to("Secured page" | trans(), "_secured") }}</li>
-                <li>{{ link_to("Editor" | trans(), "_editor") }}</li>
-            {% endif %}
+            {#{% if app.user %}#}
+                {#<li>{{ link_to("Secured page" | trans(), "_secured") }}</li>#}
+                {#<li>{{ link_to("Editor" | trans(), "_editor") }}</li>#}
+            {#{% endif %}#}
 
-            {% if app.user %}
-                <li>{{ link_to('layout.logout'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_logout") }}</li>
-                <li class="user"><a>{{ "user" | trans() ~ ": " ~ app.user.firstname ~ " " ~ app.user.lastname }}</a></li>
-            {% else %}
-                <li>{{ link_to('layout.login'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_login") }}</li>
-            {% endif %}
+            {#{% if app.user %}#}
+                {#<li>{{ link_to('layout.logout'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_logout") }}</li>#}
+                {#<li class="user"><a>{{ "user" | trans() ~ ": " ~ app.user.firstname ~ " " ~ app.user.lastname }}</a></li>#}
+            {#{% else %}#}
+                {#<li>{{ link_to('layout.login'|trans({}, 'FOSUserBundle') | trans(), "fos_user_security_login") }}</li>#}
+            {#{% endif %}#}
         </ul>
     </div>
 </div>

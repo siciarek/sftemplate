@@ -1,0 +1,3 @@
+[submodule "src/MyApp/UserBundle/Resources/public/css/world-flags-sprite"]
+	path = src/MyApp/UserBundle/Resources/public/css/world-flags-sprite
+	url = https://github.com/lafeber/world-flags-sprite.git
