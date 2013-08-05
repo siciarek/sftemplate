@@ -1,0 +1,45 @@
+# DEFAULT SETTINGS:
+
+default:
+#    filters:
+#         tags: @login # when none is given all the features from default.paths.features directory are processed
+    context:
+         class: Application\MainBundle\Features\Context\FeatureContext
+    paths:
+        features: src/Application/MainBundle/Resources/features
+
+    formatter:
+        name: progress, Application\MainBundle\Behat\Formatter\HtmlFormatter # pretty, progress, html, junit, failed, snippets, and custom formatter classes
+        parameters:
+            language:            pl
+            verbose:             true
+            decorated:           true
+            time:                true
+            base_path:           null
+            support_path:        null
+            output:              null
+            output_path:         null, web/behat/report.html
+            output_styles:       []
+            output_decorate:     null
+            snippets:            true
+            snippets_paths:      false
+            paths:               false
+            expand:              false
+            multiline_arguments: true
+
+    extensions:
+        Behat\Symfony2Extension\Extension:
+            mink_driver: true
+            kernel:
+                env: test
+                debug: true
+        Behat\MinkExtension\Extension:
+            base_url: http://konferencja.ipma.pl
+            files_path: src/Application/MainBundle/Resources/features/binaries
+            default_session: selenium2
+            javascript_session: selenium2
+            goutte: ~
+            selenium2:
+                capabilities:
+                    name: Behat Mink Testing
+

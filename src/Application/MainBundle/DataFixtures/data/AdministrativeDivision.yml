@@ -1,0 +1,506 @@
+---
+AdministrativeDivision:
+    -
+        country_code: PL
+        name: "dolnośląskie"
+    -
+        country_code: PL
+        name: "kujawsko-pomorskie"
+    -
+        country_code: PL
+        name: "lubelskie"
+    -
+        country_code: PL
+        name: "lubuskie"
+    -
+        country_code: PL
+        name: "łódzkie"
+    -
+        country_code: PL
+        name: "małopolskie"
+    -
+        country_code: PL
+        name: "mazowieckie"
+    -
+        country_code: PL
+        name: "opolskie"
+    -
+        country_code: PL
+        name: "podkarpackie"
+    -
+        country_code: PL
+        name: "podlaskie"
+    -
+        country_code: PL
+        name: "pomorskie"
+    -
+        country_code: PL
+        name: "śląskie"
+    -
+        country_code: PL
+        name: "świętokrzyskie"
+    -
+        country_code: PL
+        name: "warmińsko-mazurskie"
+    -
+        country_code: PL
+        name: "wielkopolskie"
+    -
+        country_code: PL
+        name: "zachodniopomorskie"
+    -
+        country_code: CZ
+        name: "Hlavní město Praha"
+    -
+        country_code: CZ
+        name: "Jihočeský kraj"
+    -
+        country_code: CZ
+        name: "Jihomoravský kraj"
+    -
+        country_code: CZ
+        name: "Karlovarský kraj"
+    -
+        country_code: CZ
+        name: "Královehradecký kraj"
+    -
+        country_code: CZ
+        name: "Liberecký kraj"
+    -
+        country_code: CZ
+        name: "Moravskoslezský kraj"
+    -
+        country_code: CZ
+        name: "Olomoucký kraj"
+    -
+        country_code: CZ
+        name: "Pardubický kraj"
+    -
+        country_code: CZ
+        name: "Plzeňský kraj"
+    -
+        country_code: CZ
+        name: "Středočeský kraj"
+    -
+        country_code: CZ
+        name: "Ústecký kraj"
+    -
+        country_code: CZ
+        name: "Vysočina"
+    -
+        country_code: CZ
+        name: "Zlínský kraj"
+    -
+        country_code: SE
+        name: "Blekinge"
+    -
+        country_code: SE
+        name: "Dalarna"
+    -
+        country_code: SE
+        name: "Gotland"
+    -
+        country_code: SE
+        name: "Gävleborg"
+    -
+        country_code: SE
+        name: "Halland"
+    -
+        country_code: SE
+        name: "Jämtland"
+    -
+        country_code: SE
+        name: "Jönköping"
+    -
+        country_code: SE
+        name: "Kalmar"
+    -
+        country_code: SE
+        name: "Kronoberg"
+    -
+        country_code: SE
+        name: "Norrbotten"
+    -
+        country_code: SE
+        name: "Skåne"
+    -
+        country_code: SE
+        name: "Stockholm"
+    -
+        country_code: SE
+        name: "Södermanland"
+    -
+        country_code: SE
+        name: "Uppsala"
+    -
+        country_code: SE
+        name: "Värmland"
+    -
+        country_code: SE
+        name: "Västerbotten"
+    -
+        country_code: SE
+        name: "Västernorrland"
+    -
+        country_code: SE
+        name: "Västmanland"
+    -
+        country_code: SE
+        name: "Västra Götaland"
+    -
+        country_code: SE
+        name: "Örebro"
+    -
+        country_code: SE
+        name: "Östergötland"
+    -
+        country_code: SK
+        name: "Bratislavský kraj"
+    -
+        country_code: SK
+        name: "Trnavský kraj"
+    -
+        country_code: SK
+        name: "Trenčianský kraj"
+    -
+        country_code: SK
+        name: "Nitrianský kraj"
+    -
+        country_code: SK
+        name: "Žilinský kraj"
+    -
+        country_code: SK
+        name: "Banskobystrický kraj"
+    -
+        country_code: SK
+        name: "Prešovský kraj"
+    -
+        country_code: SK
+        name: "Košický kraj"
+    -
+        country_code: HU
+        name: "Bács-Kiskun"
+    -
+        country_code: HU
+        name: "Baranya"
+    -
+        country_code: HU
+        name: "Békés"
+    -
+        country_code: HU
+        name: "Borsod-Abaúj-Zemplén"
+    -
+        country_code: HU
+        name: "Csongrád"
+    -
+        country_code: HU
+        name: "Fejér"
+    -
+        country_code: HU
+        name: "Győr-Moson-Sopron"
+    -
+        country_code: HU
+        name: "Hajdú-Bihar"
+    -
+        country_code: HU
+        name: "Heves"
+    -
+        country_code: HU
+        name: "Jász-Nagykun-Szolnok"
+    -
+        country_code: HU
+        name: "Komárom-Esztergom"
+    -
+        country_code: HU
+        name: "Nógrád"
+    -
+        country_code: HU
+        name: "Pest"
+    -
+        country_code: HU
+        name: "Somogy"
+    -
+        country_code: HU
+        name: "Szabolcs-Szatmár-Bereg"
+    -
+        country_code: HU
+        name: "Tolna"
+    -
+        country_code: HU
+        name: "Vas"
+    -
+        country_code: HU
+        name: "Veszprém"
+    -
+        country_code: HU
+        name: "Zala"
+    -
+        country_code: RO
+        name: "Alba"
+    -
+        country_code: RO
+        name: "Arad"
+    -
+        country_code: RO
+        name: "Argeş"
+    -
+        country_code: RO
+        name: "Bacău"
+    -
+        country_code: RO
+        name: "Bihor"
+    -
+        country_code: RO
+        name: "Bistriţa-Năsăud"
+    -
+        country_code: RO
+        name: "Botosani"
+    -
+        country_code: RO
+        name: "Brăila"
+    -
+        country_code: RO
+        name: "Brașov"
+    -
+        country_code: RO
+        name: "Buzău"
+    -
+        country_code: RO
+        name: "Călăraşi"
+    -
+        country_code: RO
+        name: "Caraş-Severin"
+    -
+        country_code: RO
+        name: "Covasna"
+    -
+        country_code: RO
+        name: "Dâmboviţa"
+    -
+        country_code: RO
+        name: "Dolj"
+    -
+        country_code: RO
+        name: "Galaţi"
+    -
+        country_code: RO
+        name: "Giurgiu"
+    -
+        country_code: RO
+        name: "Gorj"
+    -
+        country_code: RO
+        name: "Harghita"
+    -
+        country_code: RO
+        name: "Hunedoara"
+    -
+        country_code: RO
+        name: "Ialomiţa"
+    -
+        country_code: RO
+        name: "Ilfov"
+    -
+        country_code: RO
+        name: "Iaşi"
+    -
+        country_code: RO
+        name: "Cluj"
+    -
+        country_code: RO
+        name: "Constanta"
+    -
+        country_code: RO
+        name: "Maramureş"
+    -
+        country_code: RO
+        name: "Mehedinţi"
+    -
+        country_code: RO
+        name: "Mureş"
+    -
+        country_code: RO
+        name: "Neamţ"
+    -
+        country_code: RO
+        name: "Olt"
+    -
+        country_code: RO
+        name: "Prahova"
+    -
+        country_code: RO
+        name: "Sălaj"
+    -
+        country_code: RO
+        name: "Satu Mare"
+    -
+        country_code: RO
+        name: "Suceava"
+    -
+        country_code: RO
+        name: "Sibiu"
+    -
+        country_code: RO
+        name: "Teleorman"
+    -
+        country_code: RO
+        name: "Timiş"
+    -
+        country_code: RO
+        name: "Tulcea"
+    -
+        country_code: RO
+        name: "Vaslui"
+    -
+        country_code: RO
+        name: "Vâlcea"
+    -
+        country_code: RO
+        name: "Vrancea"
+    -
+        country_code: RO
+        name: "Bucuresti"
+    -
+        country_code: DE
+        name: "Baden-Württemberg"
+    -
+        country_code: DE
+        name: "Bayern"
+    -
+        country_code: DE
+        name: "Berlin"
+    -
+        country_code: DE
+        name: "Brandenburg"
+    -
+        country_code: DE
+        name: "Bremen"
+    -
+        country_code: DE
+        name: "Hamburg"
+    -
+        country_code: DE
+        name: "Hessen"
+    -
+        country_code: DE
+        name: "Mecklenburg-Vorpommern"
+    -
+        country_code: DE
+        name: "Niedersachsen"
+    -
+        country_code: DE
+        name: "Nordrhein-Westfalen"
+    -
+        country_code: DE
+        name: "Rheinland-Pfalz"
+    -
+        country_code: DE
+        name: "Saarland"
+    -
+        country_code: DE
+        name: "Sachsen"
+    -
+        country_code: DE
+        name: "Sachsen-Anhalt"
+    -
+        country_code: DE
+        name: "Schleswig-Holstein"
+    -
+        country_code: DE
+        name: "Thüringen"
+    -
+        country_code: RU
+        name: "ВолгаСевер"
+    -
+        country_code: RU
+        name: "ВолгаЮг"
+    -
+        country_code: RU
+        name: "Москва"
+    -
+        country_code: RU
+        name: "Петербург"
+    -
+        country_code: RU
+        name: "Сибирь"
+    -
+        country_code: RU
+        name: "Урал"
+    -
+        country_code: RU
+        name: "Центр"
+    -
+        country_code: RU
+        name: "Юг"
+    -
+        country_code: UA
+        name: "Харківська область"
+    -
+        country_code: UA
+        name: "Херсонська область"
+    -
+        country_code: UA
+        name: "Хмельницька область"
+    -
+        country_code: UA
+        name: "Черкаська область"
+    -
+        country_code: UA
+        name: "Чернігівська область"
+    -
+        country_code: UA
+        name: "Чернівецька область"
+    -
+        country_code: UA
+        name: "Дніпропетровська область"
+    -
+        country_code: UA
+        name: "Донецька область"
+    -
+        country_code: UA
+        name: "Івано-Франківська область"
+    -
+        country_code: UA
+        name: "Київська область"
+    -
+        country_code: UA
+        name: "Кіровоградська область"
+    -
+        country_code: UA
+        name: "Львівська область"
+    -
+        country_code: UA
+        name: "Луганська область"
+    -
+        country_code: UA
+        name: "Миколаївська область"
+    -
+        country_code: UA
+        name: "Одеська область"
+    -
+        country_code: UA
+        name: "Полтавська область"
+    -
+        country_code: UA
+        name: "Рівненська область"
+    -
+        country_code: UA
+        name: "Сумська область"
+    -
+        country_code: UA
+        name: "Тернопільська область"
+    -
+        country_code: UA
+        name: "Вінницька область"
+    -
+        country_code: UA
+        name: "Волинська область"
+    -
+        country_code: UA
+        name: "Закарпатська область"
+    -
+        country_code: UA
+        name: "Запорізька область"
+    -
+        country_code: UA
+        name: "Житомирська область"

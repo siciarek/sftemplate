@@ -1,0 +1,56 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-brand,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: #666666 !important;
+    font-family: 'Crete Round', serif;
+}
+
+/* Jumbotrons */
+
+.jumbotron {
+    box-shadow: 3px 3px 6px gray;
+}
+
+.jumbotron h1 {
+    color: #888888 !important;
+    text-shadow: 1px 1px white;
+}
+
+.jumbotron p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.jumbotron img {
+    float: left;
+    margin-right: 48px;
+    margin-bottom: 32px;
+}
+
+.jumbotron .btn-large {
+    margin-top: 16px !important;
+}
+
+.home [class^="icon-"],
+.home [class*=" icon-"] {
+    color: #888888;
+    text-shadow: 1px 1px 2px #CACACA;
+    font-size: 5em;
+    display: block;
+    margin-bottom: 16px;
+}

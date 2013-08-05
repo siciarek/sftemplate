@@ -1,0 +1,38 @@
+---
+Country:
+    -
+        code: "PL"
+        name: "Polska"
+        lang_code: "pl_PL"
+    -
+        code: "CZ"
+        name: "Česká republika"
+        lang_code: "cs_CZ"
+    -
+        code: "SE"
+        name: "Sverige"
+        lang_code: "sv_SE"
+    -
+        code: "RU"
+        name: "Россия"
+        lang_code: "ru_RU"
+    -
+        code: "SK"
+        name: "Slovensko"
+        lang_code: "sk_SK"
+    -
+        code: "HU"
+        name: "Magyarország"
+        lang_code: "hu_HU"
+    -
+        code: "RO"
+        name: "România"
+        lang_code: "ro_RO"
+    -
+        code: "DE"
+        name: "Deutschland"
+        lang_code: "de_DE"
+    -
+        code: "UA"
+        name: "Україна"
+        lang_code: "uk_UA"

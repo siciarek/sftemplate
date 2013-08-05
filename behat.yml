@@ -1,0 +1,46 @@
+# DEFAULT SETTINGS:
+
+imports:
+    - behat.bootstrap.yml
+
+# WEB BROWSER TESTING PROFILES:
+
+# Headless browser eg. for webservices or non javascript supported pages
+headless:
+    filters:
+         tags: @headless
+    extensions:
+        Behat\MinkExtension\Extension:
+            default_session: goutte
+
+# The major web browsers
+ff:
+    filters:
+         tags: @browser
+    extensions:
+        Behat\MinkExtension\Extension:
+            browser_name: firefox
+ie:
+    filters:
+         tags: @browser
+    extensions:
+        Behat\MinkExtension\Extension:
+            browser_name: iexplore
+ch:
+    filters:
+         tags: @browser
+    extensions:
+        Behat\MinkExtension\Extension:
+            browser_name: chrome
+sf:
+    filters:
+         tags: @browser
+    extensions:
+        Behat\MinkExtension\Extension:
+            browser_name: safari
+op:
+    filters:
+         tags: @browser
+    extensions:
+        Behat\MinkExtension\Extension:
+            browser_name: opera

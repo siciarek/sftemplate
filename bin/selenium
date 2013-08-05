@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+SRC_DIR="`pwd`"
+cd "`dirname "$0"`"
+cd "../vendor/siciarek/symfony-utils-bundle/bin/selenium"
+BIN_TARGET="`pwd`/selenium"
+cd "$SRC_DIR"
+"$BIN_TARGET" "$@"

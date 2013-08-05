@@ -1,0 +1,9 @@
+Application\Sonata\MediaBundle\Entity\Media:
+    type: entity
+    table: media__media
+
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO

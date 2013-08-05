@@ -9,7 +9,6 @@ class AppKernel extends Kernel
     {
         $bundles = array(
 
-            // Vendor Bundles:
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -18,18 +17,59 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+
+            // CAPTCHA PROSTA:
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            // CAPTCHA GOOGLE:
+            new EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle(),
+            new EWZ\Bundle\TextBundle\EWZTextBundle(),
+
+            // MAIN CUSTOM BUNDLE:
+            new Application\MainBundle\ApplicationMainBundle(),
+
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new Mopa\Bundle\WSSEAuthenticationBundle\MopaWSSEAuthenticationBundle(),
 
+            new FOS\RestBundle\FOSRestBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Bazinga\Bundle\FakerBundle\BazingaFakerBundle(),
+
+            # frontend_bundles_start
+            new Sonata\SeoBundle\SonataSeoBundle(),
+            # frontend_bundles_end
+
+            # backend_bundles_start
             new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\UserBundle\SonataUserBundle("FOSUserBundle"),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            # backend_bundles_end
+
+            # custom_bundles_start
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            # custom_bundles_end
+
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
-
-            // CustomBundles:
-
-            new MyApp\UserBundle\MyAppUserBundle(),
+            new Siciarek\SymfonyUtilsBundle\SiciarekSymfonyUtilsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

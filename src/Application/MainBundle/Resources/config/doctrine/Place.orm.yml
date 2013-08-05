@@ -1,0 +1,87 @@
+# OK
+Application\MainBundle\Entity\Place:
+    type: entity
+    table: place
+    repositoryClass: PlaceRepository
+    namedQueries:
+        name_and_adm_div: |
+            SELECT p
+            FROM __CLASS__ p
+            LEFT JOIN p.administrativeDivision d
+            WHERE p.name = :name
+            AND d.id = :adm_div
+        search: |
+            SELECT p.id, p.info, p.name, d.id, d.name
+            FROM __CLASS__ p
+            LEFT JOIN p.administrativeDivision d
+            WHERE p.name LIKE :term
+
+    namedNativeQueries:
+        search:
+            resultSetMapping: placeSearchResult
+            query: |
+                SELECT p.id, p.name, p.info, ad.id as ad_id, ad.name as ad_name
+                FROM place p
+                LEFT JOIN administrative_division ad
+                    ON p.administrative_division_id = ad.id
+                WHERE p.name LIKE ?
+
+    sqlResultSetMappings:
+        placeSearchResult:
+            entityResult:
+                -
+                    entityClass: __CLASS__
+                    fieldResult:
+                        -
+                            name: id
+                            column: id
+                        -
+                            name: name
+                            column: name
+                        -
+                            name: info
+                            column: info
+                        -
+                            name: administrativeDivision.id
+                            column: ad_id
+                        -
+                            name: administrativeDivision.name
+                            column: ad_name
+
+    indexes:
+        -
+            name: IDX_PLACE_NAME_PARTIAL
+            columns: [name]
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            length: 127
+        info: ~
+
+    oneToMany:
+        addresses:
+            targetEntity: Address
+            mappedBy: place
+            cascade:
+                - persist
+    manyToOne:
+        created_by:
+            targetEntity: Application\Sonata\UserBundle\Entity\User
+            joinColumn:
+                name: created_by
+                referencedColumnName: id
+                onDelete: SET NULL
+
+        administrativeDivision:
+            targetEntity: AdministrativeDivision
+            inversedBy: places
+            joinColumn:
+                nullable: false
+                name: administrative_division_id
+                referencedColumnName: id
+                onDelete: CASCADE
+

@@ -1,0 +1,9 @@
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     %snappy.html_to_pdf_converter%
+        options:    []
+    image:
+        enabled:    false
+        binary:     %snappy.html_to_image_converter%
+        options:    []

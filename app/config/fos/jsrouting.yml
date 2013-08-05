@@ -1,0 +1,7 @@
+fos_js_routing:
+#    routes_to_expose: [\w+] # all the routes
+    routes_to_expose:
+        - '^_client(.*)'
+        - '^_device(.*)'
+        - '^_notification(.*)'
+        - '^_office(.*)'

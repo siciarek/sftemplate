@@ -1,0 +1,57 @@
+parameters:
+    captcha_enabled: false
+    display_last_modified: false
+
+    app_name: Hello, World!
+    app_description: >
+        Symfony2 peoject template, based on twitter bootstrap.
+        Lorem ipsum dolor sit amet, mytilenam Descendi eam ad te in fuerat se vero non coepit amatrix tolle.
+        Dicens mea Stet consequat eiusdem ea docentur Hellenicus dixisset.
+    app_keywords: hello world, Symfony2, twitter bootstrap, template
+    app_robots: "noindex, nofollow"
+
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+
+    session_cookie_name:        sesservice
+    session_database_driver:    %database_driver%
+    session_database_host:      %database_host%
+    session_database_port:      %database_port%
+    session_database_name:      %database_name%
+    session_database_user:      %database_user%
+    session_database_password%: %database_password%
+
+    mailer_transport: smtp
+    mailer_encryption: tls
+    mailer_auth_mode: login
+    mailer_host: mail.sescom.pl
+    mailer_user: intranet@sescom.pl
+    mailer_password: SescomI2011
+
+    locale:            pl
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    uploads_path: /uploads
+    attachments_path: %kernel.root_dir%/../data/attachments
+
+    # Sonata Media options
+    sonata_media.cdn.host:          %uploads_path%/media
+    paginator_limit_per_page: 25
+
+    # Recaptcha
+    recaptcha_public_key:  ThisTokenIsNotAPublicKeyChangeIt
+    recaptcha_private_key: ThisTokenIsNotAPrivateKeyChangeIt
+
+    # Java path
+    java_path: C:\Windows\System32\java.exe
+
+    # JS routing
+    router.request_context.host: ~
+
+    # Snappy converters
+    snappy.html_to_pdf_converter: 'C:/PROGRA~2/WKHTMLTOPDF/WKHTMLTOPDF.EXE'
+    snappy.html_to_image_converter: ~

@@ -1,0 +1,29 @@
+# OK
+Application\MainBundle\Entity\Address:
+    type: entity
+    table: address
+    repositoryClass: AddressRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        postal_code:
+            length: 20
+            nullable: true
+        address:
+            length: 50
+            nullable: false
+    manyToOne:
+        place:
+            targetEntity: Place
+            inversedBy: addresses
+            cascade:
+                - persist
+            joinColumn:
+                name: place_id
+                referencedColumnName: id
+                nullable: false
+                onDelete: CASCADE
+

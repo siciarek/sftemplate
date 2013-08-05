@@ -2,12 +2,36 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{ app_name }}{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
         {% block body %}{% endblock %}
+
+        <div id="footer">
+            <div class="container">
+                <ul class="footer-links">
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+                <p class="text-muted copy-info">
+                    &copy; {{ 'now'|date('Y') }}. All rights reserved. {{ app_name }}.
+                </p>
+            </div>  <!-- /content -->
+        </div> <!-- /footer -->
+
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.js') }}"></script>
         {% block javascripts %}{% endblock %}
+
+
+        {{ accept_cookies() }}
     </body>
 </html>

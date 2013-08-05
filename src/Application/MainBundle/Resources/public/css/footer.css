@@ -1,0 +1,41 @@
+#footer {
+    margin-top: 80px;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #EEEEEE;
+}
+
+#footer .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    float: left;
+}
+
+#footer .footer-links li {
+    display: inline;
+    padding: 0 15px 0 0;
+}
+
+#footer .copy-info {
+    margin: 20px 0;
+    float: right;
+}
+
+/* Apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        height: auto;
+        min-height: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    #footer .footer-links,
+    #footer .copy-info {
+        float: none;
+        text-align: center;
+    }
+}

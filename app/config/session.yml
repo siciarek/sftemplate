@@ -1,0 +1,62 @@
+### Table with following definition is required in database:
+# CREATE TABLE IF NOT EXISTS `session` (
+#   `sess_id` varchar(255) NOT NULL,
+#   `sess_data` text NOT NULL,
+#   `sess_time` int(11) NOT NULL,
+#   PRIMARY KEY (`session_id`),
+# ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+parameters:
+    session.handler.pdo.class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+    pdo.attr_errormode:        3 # \PDO::ATTR_ERRMODE
+    pdo.errormode_exception:   2 # \PDO::ERRMODE_EXCEPTION
+    pdo.options:
+        db_table:    session
+#        db_id_col:   sess_id
+#        db_data_col: sess_data
+#        db_time_col: sess_time
+
+services:
+    session.handler.pdo:
+        class: %session.handler.pdo.class%
+        arguments:
+            - @doctrine.dbal.default.wrapped_connection
+            - %pdo.options%
+
+    doctrine.dbal.default.wrapped_connection:
+        class: PDO
+        factory_service: doctrine.dbal.default_connection
+        factory_method: getWrappedConnection
+
+
+# When non default database handler is required
+
+    pdo:
+        class: PDO
+        arguments:
+            - "mysql:host=%database_host%;port=%database_port%;dbname=%database_name%"
+            - %database_user%
+            - %database_password%
+        calls:
+             - [setAttribute, [%pdo.attr_errormode%, %pdo.errormode_exception%]]
+
+framework:
+    session:
+        name: %session_cookie_name%
+        cookie_lifetime: 7200 # two hours
+        handler_id: session.handler.pdo
+
+
+#    session:
+#        name:
+#        cookie_lifetime:
+#        cookie_path:
+#        cookie_domain:
+#        cookie_secure:
+#        cookie_httponly:
+#        gc_divisor:
+#        gc_probability:
+#        gc_maxlifetime:
+#        save_path:
+
+

@@ -1,0 +1,38 @@
+assetic:
+
+    assets:
+
+        main:
+            inputs:
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/fonts.css
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/layout.css
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/form.css
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/footer.css
+            output: css/main.css
+
+# BOOTSTRAP
+
+        bootstrap_css:
+            inputs:
+                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/css/bootstrap.css
+            output: css/bootstrap.css
+            filters:
+                - lessphp
+                - yui_css
+                - cssrewrite
+
+        bootstrap_js:
+            inputs:
+                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/js/bootstrap.js
+            output: js/bootstrap.js
+            filters:
+                - yui_js
+
+# JQUERY:
+
+        jquery:
+            inputs:
+                - %kernel.root_dir%/../vendor/jquery/jquery/jquery.js
+            output: js/jquery.js
+            filters:
+                - yui_js

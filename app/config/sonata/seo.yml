@@ -1,0 +1,54 @@
+sonata_seo:
+    encoding:             UTF-8
+    page:
+        default:          sonata.seo.page.default
+        title:            %app_name%
+        metas:
+            name:
+                keywords:             %app_keywords%
+                description:          %app_description%
+                robots:               %app_robots%
+                charset:   UTF-8
+
+            property:
+                # Facebook application settings
+                #'fb:app_id':          XXXXXX
+                #'fb:admins':          admin1, admin2
+
+                # Open Graph information
+                # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
+                'og:site_name':       %app_name%
+                'og:description':     %app_description%
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+                #'X-Ua-Compatible':      IE=EmulateIE7
+
+        head:
+            lang:                 %locale%
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
+            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
+
+#    sitemap:
+#        doctrine_orm:
+#            -
+#                connection: doctrine.dbal.default_connection
+#                route: sonata_news_view
+#                parameters: {permalink: null}
+#                query: |
+#                   SELECT
+#                       CONCAT_WS('/', YEAR(created_at), MONTH(created_at), DAY(created_at), slug) as permalink,
+#                       updated_at as lastmod,
+#                       'weekly' as changefreq,
+#                       '0.5' as prioriy
+#                   FROM
+#                       news__post
+#                   WHERE
+#                       enabled = 1
+#                       AND (
+#                           publication_date_start IS NULL
+#                           OR
+#                           publication_date_start <= NOW()
+#                       )
+

@@ -1,0 +1,49 @@
+# OK
+Application\MainBundle\Entity\Page:
+    type: entity
+    table: page
+    repositoryClass: PageRepository
+    namedQueries:
+        count: SELECT COUNT(p) FROM __CLASS__ p
+        sorted: SELECT p FROM __CLASS__ p WHERE p.enabled = true ORDER BY p.position ASC
+        asc: SELECT o FROM __CLASS__ o ORDER BY o.id DESC
+        desc: SELECT o FROM __CLASS__ o ORDER BY o.id DESC
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        position:
+            type: integer
+            gedmo:
+                - sortablePosition
+        slug:
+            type: string
+            length: 128
+            gedmo:
+                slug:
+                    fields:
+                        - title
+        title:
+            nullable: true
+            gedmo: [ translatable ]
+        content:
+            type: text
+            gedmo: [ translatable ]
+        enabled:
+            type: boolean
+            nullable: true
+        home:
+            type: boolean
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update

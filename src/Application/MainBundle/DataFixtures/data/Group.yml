@@ -1,0 +1,13 @@
+Group:
+    -
+        name          : 'users'
+        roles         : ['ROLE_USER']
+        enabled       : true
+    -
+        name          : 'admins'
+        roles         : ['ROLE_ADMIN']
+        enabled       : true
+    -
+        name          : 'superadmins'
+        roles         : ['ROLE_SUPER_ADMIN']
+        enabled       : true

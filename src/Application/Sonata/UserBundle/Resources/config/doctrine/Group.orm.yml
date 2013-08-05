@@ -1,0 +1,10 @@
+Application\Sonata\UserBundle\Entity\Group:
+    type: entity
+    table: fos_user_group
+    namedQueries:
+        enabled: SELECT o FROM __CLASS__ o WHERE o.enabled = true
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO

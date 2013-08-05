@@ -1,0 +1,51 @@
+User:
+    -
+        username      : 'system'
+        password      : 'password'
+        email         : 'it@sescom.pl'
+        firstname     : 'System'
+        lastname      : 'User'
+        roles         : ['ROLE_USER']
+        enabled       : false
+        superadmin    : true
+        groups        : ['superadmins']
+    -
+        username      : 'jsiciarek'
+        password      : 'password'
+        email         : 'siciarek@gmail.com'
+        firstname     : 'Jacek'
+        lastname      : 'Siciarek'
+        roles         : ['ROLE_USER']
+        enabled       : true
+        superadmin    : true
+        groups        : ['superadmins']
+    -
+        username      : 'mroova'
+        password      : 'mroova'
+        email         : 't.mrowiec@sescom.pl'
+        firstname     : 'Tomasz'
+        lastname      : 'Mrowiec'
+        roles         : ['ROLE_USER']
+        enabled       : true
+        superadmin    : true
+        groups        : ['superadmins']
+    -
+        username      : 'darwie'
+        password      : 'darwie'
+        email         : 'dar.wie@wp.pl'
+        firstname     : 'Dariusz'
+        lastname      : 'Wieczorek'
+        roles         : ['ROLE_USER']
+        enabled       : true
+        superadmin    : true
+        groups        : ['superadmins']
+    -
+        username      : 'colak'
+        password      : 'password'
+        email         : 'j.siciarek@sescom.pl'
+        firstname     : 'Czesław'
+        lastname      : 'Olak'
+        roles         : ['ROLE_USER']
+        enabled       : true
+        superadmin    : false
+        groups        : ['users']

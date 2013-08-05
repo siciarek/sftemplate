@@ -1,0 +1,24 @@
+# OK
+Application\MainBundle\Entity\Country:
+    type: entity
+    table: country
+    repositoryClass: CountryRepository
+    id:
+        code:
+            type: string
+            length: 2
+            fixed: true
+            generator:
+                strategy: NONE
+    fields:
+        name:
+            length: 64
+        lang_code:
+            type: string
+            length: 5
+            fixed: true
+    oneToMany:
+        administrativeDivisions:
+            targetEntity: AdministrativeDivision
+            mappedBy: country
+

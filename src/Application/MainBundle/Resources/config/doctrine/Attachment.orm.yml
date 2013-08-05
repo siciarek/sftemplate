@@ -1,0 +1,49 @@
+# OK
+Application\MainBundle\Entity\Attachment:
+    type: entity
+    table: attachment
+    repositoryClass: AttachmentRepository
+#    namedNativeQueries:
+#        purge: |
+#            SELECT o.* FROM attachment o
+#            WHERE
+#                o.deleted_at IS NOT NULL
+#            AND
+#                a.deleted_at < DATE_SUB(NOW(), INTERVAL 3 DAYS)
+    gedmo:
+        soft_deleteable:
+            field_name: deleted_at
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        class: ~
+        object_id:
+            type: integer
+        name: ~
+        extension:
+            nullable: true
+            length: 8
+        path: ~
+        size:
+            type: integer
+            unsigned: true
+        mime_type:
+            length: 64
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        deleted_at:
+            type: datetime
+            nullable: true
+    manyToOne:
+        created_by:
+            targetEntity: Application\Sonata\UserBundle\Entity\User
+            joinColumn:
+                name: created_by
+                referencedColumnName: id
+                onDelete: SET NULL

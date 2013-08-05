@@ -1,0 +1,5 @@
+parameters:
+    validator.mapping.loader.yaml_files_loader.mapping_files:
+        - %kernel.root_dir%/../src/Application/MainBundle/Resources/config/validation.yml # default
+        - %kernel.root_dir%/../src/Application/MainBundle/Resources/config/validation/Entity/BusinessType.yml
+        - %kernel.root_dir%/../src/Application/MainBundle/Resources/config/validation/Entity/Notification.yml

@@ -1,0 +1,28 @@
+# OK
+Application\MainBundle\Entity\AdministrativeDivision:
+    type: entity
+    table: administrative_division
+    repositoryClass: AdministrativeDivisionRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 64
+    oneToMany:
+        places:
+            targetEntity: Place
+            mappedBy: administrativeDivision
+    manyToOne:
+        country:
+            targetEntity: Country
+            inversedBy: administrativeDivisions
+            joinColumn:
+                name: country_code
+                referencedColumnName: code
+                nullable: false
+
+

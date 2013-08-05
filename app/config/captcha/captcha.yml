@@ -1,0 +1,31 @@
+ewz_recaptcha:
+    enabled: %captcha_enabled%
+    public_key: "%recaptcha_public_key%"
+    private_key: "%recaptcha_private_key%"
+    secure: false
+    locale_key: kernel.default_locale
+
+gregwar_captcha:
+    length: 5
+    width: 130
+    height: 50
+    font: '%kernel.root_dir%/../vendor/gregwar/captcha-bundle/Gregwar/CaptchaBundle/Generator/Font/captcha.ttf'
+    keep_value: false
+    charset: 'abcdefhjkmnprstuvwxyz23456789'
+    as_file: false
+    as_url: false
+    reload: false
+    image_folder: 'captcha'
+    web_path: '%kernel.root_dir%/../web'
+    gc_freq: 100
+    expiration: 60
+    quality: 30
+    invalid_message: 'Bad code value'
+    bypass_code: null
+    whitelist_key: 'captcha_whitelist_key'
+    humanity: 0
+    distortion: true
+    max_front_lines: null
+    max_behind_lines: null
+    interpolation: true
+    background_color: null # [255, 0, 0]

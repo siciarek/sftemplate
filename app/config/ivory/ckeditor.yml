@@ -1,0 +1,47 @@
+ivory_ck_editor:
+
+    plugins:
+        youtube:
+            path:     "/bundles/applicationmain/js/ckeditor/plugins/youtube/"
+            filename: "plugin.js"
+
+    toolbars:
+        items:
+            save: ['Save', 'Maximize', 'ShowBlocks']
+            typography: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript']
+            edit: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'SpellChecker', 'Scayt']
+            elements: ['Image', 'Flash', 'Youtube', 'Link', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar']
+            alignment: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiRtl', 'BidiLtr']
+            find: ['Undo', 'Redo', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat']
+            format: ['Format', 'Source']
+            lists: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote']
+            links: ['Link', 'Unlink', 'Anchor', 'LinkToNode', 'LinkToMenu']
+        configs:
+            basic:
+                - @save
+                - @typography
+            extended:
+                - @save
+                - @typography
+                - @edit
+                - @elements
+                - @alignment
+                - @find
+                - @format
+                - @lists
+                - @links
+
+    configs:
+        basic:
+            width: 1024
+            height: 200
+            toolbar: basic
+        extended:
+            width: 900
+            height: 200
+            contentsCss: '/bundles/applicationmain/css/ckeditor.css'
+            toolbar: extended
+            filebrowserBrowseUrl : '/bundles/applicationmain/js/pdw_file_browser/index.php'
+            filebrowserImageBrowseUrl : '/bundles/applicationmain/js/pdw_file_browser/index.php?filter=image'
+            filebrowserFlashBrowseUrl : '/bundles/applicationmain/js/pdw_file_browser/index.php?filter=flash'
+            extraPlugins: youtube

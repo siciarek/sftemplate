@@ -1,0 +1,7 @@
+---
+Contact:
+    -
+        ref: 1
+        entries:
+            - { type: 'phone', value: '+48 58 761-29-60', main: true }
+            - { type: 'fax', value: '+48 58 761-29-61', main: true }

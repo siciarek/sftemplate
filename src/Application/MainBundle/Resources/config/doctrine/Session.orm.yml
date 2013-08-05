@@ -1,0 +1,13 @@
+# OK
+Application\MainBundle\Entity\Session:
+    type: entity
+    table: session
+    id:
+        sess_id: ~
+    fields:
+        sess_data:
+            type: text
+            columnDefinition: TEXT NOT NULL
+        sess_time:
+            type: integer
+            unsigned: true
