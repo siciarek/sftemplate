@@ -1,0 +1,10 @@
+# Namespaces and mapping paths
+
+Application\MainBundle\Entity:
+    path: src/Application/MainBundle/Resources/config/doctrine
+
+Application\Sonata\UserBundle\Entity:
+    path: src/Application/Sonata/UserBundle/Resources/config/doctrine
+
+Application\Sonata\MediaBundle\Entity:
+    path: src/Application/Sonata/MediaBundle/Resources/config/doctrine
