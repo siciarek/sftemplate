@@ -34,7 +34,7 @@ default:
                 env: test
                 debug: true
         Behat\MinkExtension\Extension:
-            base_url: http://konferencja.ipma.pl
+            base_url: http://sftemplate.dev
             files_path: src/Application/MainBundle/Resources/features/binaries
             default_session: selenium2
             javascript_session: selenium2
