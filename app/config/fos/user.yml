@@ -20,6 +20,6 @@ fos_user:
             enabled:    true
             template:   ApplicationMainBundle:Email:registration.email.twig
         form:
-#            type:               user_registration
+            type:               user_registration
             name:               fos_user_registration_form
             validation_groups:  [Registration, Default]

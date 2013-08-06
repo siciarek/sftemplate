@@ -19,22 +19,26 @@ class RegistrationFormType extends BaseType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add("username", null, array("label" => "form.register.username", "required" => true));
-        $builder->add("first_name", null, array("label" => "form.register.firstname", "required" => false));
-        $builder->add("last_name", null, array("label" => "form.register.lastname", "required" => false));
-        $builder->add("email", "email", array("label" => "E-mail * "));
-        $builder->add("plainPassword", "repeated", array(
-            "type"            => "password",
-            "first_options"   => array("label" => "form.register.password"),
-            "second_options"  => array("label" => "form.register.repeatpass"),
-            "invalid_message" => "fos_user.password.mismatch",
+        $builder->add('username', null, array('label' => 'form.register.username', 'required' => true));
+        $builder->add('first_name', null, array('label' => 'form.register.firstname', 'required' => false));
+        $builder->add('last_name', null, array('label' => 'form.register.lastname', 'required' => false));
+        $builder->add('email', 'email', array('label' => 'E-mail'));
+        $builder->add('plainPassword', 'repeated', array(
+            'type'            => 'password',
+            'first_options'   => array('label' => 'form.register.password'),
+            'second_options'  => array('label' => 'form.register.repeatpass'),
+            'invalid_message' => 'fos_user.password.mismatch',
         ));
 
-        $builder->add("enabled", "hidden", array("data" => 0));
+        $builder->add('enabled', 'hidden', array('data' => 0));
+        $builder->add('save', 'submit', array(
+            'label' => 'registration.submit',
+            'translation_domain' => 'FOSUserBundle',
+        ));
     }
 
     public function getName()
     {
-        return "user_registration";
+        return 'user_registration';
     }
 }

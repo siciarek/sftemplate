@@ -3,6 +3,7 @@ parameters:
     request.class: Symfony\Component\HttpFoundation\Request
     app.main.listener.class: Application\MainBundle\Listener\ApplicationMainListener
     app.main.twig.extension.class: Application\MainBundle\Twig\Extension\ApplicationMainExtension
+    app.main.registration.form.class: Application\MainBundle\Form\Type\RegistrationFormType
 
 services:
 
@@ -14,6 +15,12 @@ services:
         tags:
           - { name: form.type, label: recaptcha, alias: recaptcha }
         arguments: [ @translator ]
+
+    registration.form.type:
+        class: %app.main.registration.form.class%
+        tags:
+          - { name: form.type, alias: user_registration }
+        arguments: [ %fos_user.model.user.class% ]
 
     app.main.twig.extension:
         class: %app.main.twig.extension.class%
