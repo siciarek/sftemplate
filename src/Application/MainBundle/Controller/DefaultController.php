@@ -16,4 +16,13 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * @Route("/gallery", name="_gallery")
+     * @Template()
+     */
+    public function galleryAction()
+    {
+        return array();
+    }
 }

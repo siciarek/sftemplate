@@ -1,0 +1,33 @@
+---
+parameters:
+    request.class: Symfony\Component\HttpFoundation\Request
+    app.main.listener.class: Application\MainBundle\Listener\ApplicationMainListener
+    app.main.twig.extension.class: Application\MainBundle\Twig\Extension\ApplicationMainExtension
+
+services:
+
+    request:
+        class: %request.class%
+
+    form.type.recaptcha:
+        class: Application\MainBundle\Form\Type\RecaptchaTransType
+        tags:
+          - { name: form.type, label: recaptcha, alias: recaptcha }
+        arguments: [ @translator ]
+
+    app.main.twig.extension:
+        class: %app.main.twig.extension.class%
+        arguments: [ @twig.loader, @router, @ewz_text.text_helper, @service_container ]
+        tags:
+            -
+                name:   twig.extension
+
+    app.main.listener:
+        class: %app.main.listener.class%
+        tags:
+            -
+                name:   kernel.event_listener
+                event:  kernel.controller
+                method: handleCoreController
+        arguments:
+            - @kernel

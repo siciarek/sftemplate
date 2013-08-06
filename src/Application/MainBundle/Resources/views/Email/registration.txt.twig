@@ -1,0 +1,18 @@
+{% block body_text %}
+    {% autoescape false %}
+
+    Wiadomość przeznaczona jest dla użytkownika {{ user.firstname ~ ' ' ~ user.lastname }}
+
+    Jeżeli to nie Ty dokonałeś rejestracji konta, prosimy o zignorowania tego maila
+    lub o kontakt z serwisem {{ url('_homepage')  }}.
+
+    W celu zakończenia procesu rejestracji kliknij w poniższy link:
+
+    {{ confirmationUrl }}
+
+    Z poważaniem
+
+    {{ app_name }}
+
+    {% endautoescape %}
+{% endblock %}

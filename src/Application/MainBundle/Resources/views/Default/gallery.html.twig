@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <style>
+        ul.photogallery {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.photogallery li {
+            display: inline-block;
+            margin-right: 16px;
+            margin-bottom: 16px;
+        }
+    </style>
+
+    {{ photogallery() }}
+
+{% endblock %}

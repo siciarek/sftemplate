@@ -1,0 +1,19 @@
+{% block body_html %}
+
+    {% include "ApplicationMainBundle:Email:logo.html.twig" %}
+
+    <p>Wiadomość przeznaczona jest dla użytkownika: <b>{{ user.firstname ~ ' ' ~ user.lastname }}</b>.</p>
+
+    <p>Jeżeli to nie Ty dokonałeś rejestracji konta, prosimy o zignorowania tego maila<br/>
+        lub o kontakt z serwisem <a href="{{ url("_homepage") }}">{{ url("_homepage") }}</a></p>
+
+    <p>W celu zakończenia procesu rejestracji kliknij w poniższy link:</p>
+
+    <p><a href="{{ confirmationUrl }}">ZATWIERDZENIE REJESTRACJI</a></p>
+
+    <br/>
+
+    <p>Z poważaniem</p>
+
+    <p>{{ app_name }}</p>
+{% endblock %}

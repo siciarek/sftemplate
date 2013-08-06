@@ -18,8 +18,8 @@ fos_user:
     registration:
         confirmation:
             enabled:    true
-#            template:   ApplicationMainBundle:Email:registration.email.twig
+            template:   ApplicationMainBundle:Email:registration.email.twig
         form:
-            type:               user_registration
+#            type:               user_registration
             name:               fos_user_registration_form
             validation_groups:  [Registration, Default]

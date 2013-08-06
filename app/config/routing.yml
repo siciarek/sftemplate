@@ -1,5 +1,58 @@
+# ApplicationMainBundle
+
 application_main:
-    resource: "@ApplicationMainBundle/Controller/"
     type:     annotation
+    resource: "@ApplicationMainBundle/Controller/"
     prefix:   /
 
+#### SonataMediaBundle
+
+sonata_media_gallery:
+    resource: "@SonataMediaBundle/Resources/config/routing/gallery.xml"
+    prefix: /media/gallery
+
+sonata_media_media:
+    resource: "@SonataMediaBundle/Resources/config/routing/media.xml"
+    prefix: /media
+
+sonata_media_pixlr:
+    resource: "@SonataMediaBundle/Resources/config/routing/pixlr.xml"
+    prefix: /admin/media
+
+# backend_routing_start
+
+sonata_user:
+    resource: "@SonataUserBundle/Resources/config/routing/admin_security.xml"
+    prefix: /admin
+
+sonata_user_profile:
+    resource: "@SonataUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+admin:
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+# FOS
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+# backend_routing_end

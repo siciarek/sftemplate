@@ -97,6 +97,7 @@ security:
 
     # SECURED PART OF THE SITE:
 
+        - { path: ^/admin/, role: ROLE_ADMIN }
 
     # PUBLIC PART OF THE SITE:
 

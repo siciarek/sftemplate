@@ -1,0 +1,33 @@
+form:
+    forgotpassword: Forgot password
+    register:
+        username:    User name
+        firstname:   First name
+        lastname:    Last name
+        password:    Password
+        repeatpass:  Repeat pasword
+        gender:      Gender
+
+admin:
+    labels:
+        page: Page
+        attachment: Attachment
+
+page:
+    under.construction: Page under construction
+    previous: Previous
+    next: Next
+
+recaptcha:
+    audio_challenge      : Get an audio challenge
+    cant_hear_this       : Download sound as MP3,
+    help_btn             : Help,
+    image_alt_text       : reCAPTCHA challenge image
+    incorrect_try_again  : Incorrect. Try again.
+    instructions_audio   : Type what you hear:
+    instructions_context : Type the words in the boxes:
+    instructions_visual  : Type the two words:
+    play_again           : Play sound again
+    privacy_and_terms    : Privacy & Terms
+    refresh_btn          : Get a new challenge
+    visual_challenge     : Get a visual challenge

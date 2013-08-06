@@ -2,12 +2,13 @@ assetic:
 
     assets:
 
-        main:
+        main_css:
             inputs:
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/fonts.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/layout.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/form.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/footer.css
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/photogallery.css
             output: css/main.css
 
 # BOOTSTRAP

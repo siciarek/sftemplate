@@ -1,0 +1,50 @@
+{% extends "SonataAdminBundle::standard_layout.html.twig" %}
+
+{% block footer %}
+    <script>
+        jQuery(document).ready(function($) {
+            $.datepicker.setDefaults($.datepicker.regional[ "pl" ]);
+            $(".date_picker").css("margin-right", 6);
+
+            $(".date_picker").each(function(){
+                var self = $(this);
+                self.datepicker({
+                    dateFormat: "yy-mm-dd",
+                    changeMonth: true,
+                    changeYear: true,
+                    showButtonPanel: true,
+                    showOn: "both",
+                    buttonImageOnly: true,
+                    buttonImage: "{{ asset("bundles/applicationmain/images/icons/calendar.png") }}"
+                });
+            });
+
+            var i18n = '<li class="dropdown">'
+                + '<a class="dropdown-toggle" data-toggle="dropdown" href="#">'
+                + 'Switch language'
+                + '<span class="caret"></span>'
+                + '</a>'
+                + '<ul class="dropdown-menu">'
+                + '<li>'
+                    + '<a href="{{ url("_locale_change", { locale:"pl" }) }}">Po polsku</a>'
+                    + '<a href="{{ url("_locale_change", { locale:"en" }) }}">English</a>'
+                + '</li>'
+                + '</ul>'
+                + '</li>'
+            ;
+
+            $("div.nav-collapse ul.nav").append(i18n);
+        });
+    </script>
+
+    <style>
+        .cke_dialog_ui_input_text {
+            height: 24px !important;
+            min-width: 64px !important;
+        }
+        .cke_dialog_ui_input_select {
+            min-width: 100px !important;
+        }
+    </style>
+
+{% endblock %}

@@ -18,6 +18,9 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
+
+            new Uran1980\FancyBoxBundle\Uran1980FancyBoxBundle(),
+
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
 

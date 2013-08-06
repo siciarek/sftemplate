@@ -1,2 +1,74 @@
+parameters:
+    page.entity.class: Application\MainBundle\Entity\Page
+    page.admin.class: Application\MainBundle\Admin\PageAdmin
+
+services:
+
+    application.main.admin.page:
+        class: %page.admin.class%
+        tags: [{ name: sonata.admin, manager_type: orm, label: "admin.labels.page" }]
+        arguments: [ null, %page.entity.class%, SonataAdminBundle:CRUD ]
+
+sonata_doctrine_orm_admin:
+    templates:
+        types:
+            list:
+                html: ApplicationMainBundle:CRUD:list_html.html.twig
+                datetime: ApplicationMainBundle:CRUD:list_datetime.html.twig
+            show:
+                html: ApplicationMainBundle:CRUD:show_html.html.twig
+                datetime: ApplicationMainBundle:CRUD:show_datetime.html.twig
+
 sonata_admin:
-    title:      %app_name%
+    title:      Panel Administracyjny
+    title_logo: /bundles/applicationmain/images/logo.png
+    persist_filters: true
+    templates:
+        layout: ApplicationMainBundle:Admin:standard_layout.html.twig
+
+#    security:
+#        handler: sonata.admin.security.handler.acl
+#        # acl security information
+#        information:
+#            GUEST:    [VIEW, LIST]
+#            STAFF:    [EDIT, LIST, CREATE]
+#            EDITOR:   [OPERATOR, EXPORT]
+#            ADMIN:    [MASTER]
+#        # permissions not related to an object instance and also to be available when objects do not exist
+#        # the DELETE admin permission means the user is allowed to batch delete objects
+#        admin_permissions: [CREATE, LIST, DELETE, UNDELETE, EXPORT, OPERATOR, MASTER]
+#        # permission related to the objects
+#        object_permissions: [VIEW, EDIT, DELETE, UNDELETE, OPERATOR, MASTER, OWNER]
+
+    dashboard:
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups:
+                        - pages
+
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups:
+                        - media
+                        - users
+        groups:
+            pages:
+                label: "Pages"
+                items:
+                    - application.main.admin.page
+
+            media:
+                label: "Galerie fotografii"
+                items:
+                    - sonata.media.admin.gallery
+                    - sonata.media.admin.media
+            users:
+                label: "Users"
+                items:
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group

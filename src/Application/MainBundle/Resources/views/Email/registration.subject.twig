@@ -1,0 +1,5 @@
+{% block subject %}
+    {% autoescape false %}
+    {{ "[POTWIERDZENIE REJESTRACJI] " ~ user.firstname ~ ' ' ~ user.lastname ~ ', ' ~ app_name }}
+    {% endautoescape %}
+{% endblock %}

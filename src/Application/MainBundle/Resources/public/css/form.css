@@ -1,3 +1,7 @@
 form.navbar-form .form-control {
     width: 150px !important;
 }
+
+form.form-horizontal div.control-group {
+    margin-bottom: 16px !important;
+}

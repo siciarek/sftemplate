@@ -1,12 +1,8 @@
 {% extends '::base.html.twig' %}
 {% block body %}
 
-    {% include 'ApplicationMainBundle:Common:menu.html.twig' %}
-
-    <div class="container">
-
         <div class="jumbotron">
-            {% image '@ApplicationMainBundle/Resources/public/images/picture.png' output='/images/bigpicture.png' %}<img src="{{ asset_url }}" alt="{{ app_name }}"/>{% endimage %}
+            {% image '@ApplicationMainBundle/Resources/public/images/picture.png' output='images/bigpicture.png' %}<img src="{{ asset_url }}" alt="{{ app_name }}"/>{% endimage %}
             <h1>{{ app_name }}</h1>
             <p>{{ app_description }}</p>
             <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
@@ -14,7 +10,6 @@
 
         <div class="body-content">
 
-            <!-- Example row of columns -->
             <div class="row home">
                 <div class="col-lg-4">
                     <h2>First</h2>
@@ -37,7 +32,5 @@
             </div>
 
         </div>
-
-    </div> <!-- /container -->
 
 {% endblock %}

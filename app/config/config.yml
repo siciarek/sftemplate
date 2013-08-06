@@ -50,6 +50,9 @@ twig:
     globals:
         app_name: %app_name%
         app_description: %app_description%
+        supported_languages:
+           en: English
+           pl: Polski
 
 # Assetic Configuration
 assetic:
