@@ -208,12 +208,14 @@
         <delete dir="web/css" verbose="true"/>
         <delete dir="web/images" verbose="true"/>
         <delete dir="web/font" verbose="true"/>
+        <delete dir="web/behat" verbose="true"/>
 
         <mkdir dir="web/bundles"/>
         <mkdir dir="web/js"/>
         <mkdir dir="web/css"/>
         <mkdir dir="web/images"/>
         <mkdir dir="web/font"/>
+        <mkdir dir="web/behat"/>
     </target>
 
     <target name="rcomp">
