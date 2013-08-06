@@ -40,7 +40,7 @@ web/bundles
 web/js
 web/css
 web/images
-web/fonts
+web/font
 web/docs
 web/behat
 web/assetic
