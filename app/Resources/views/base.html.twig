@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>{% block title %}{{ app_name }}{% endblock %}</title>
+    <title>{% block title %}{{ app_name|trans }}{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
@@ -33,7 +33,7 @@
             <li><a href="#">Privacy</a></li>
         </ul>
         <p class="text-muted copy-info">
-            &copy; {{ 'now'|date('Y') }}. All rights reserved. {{ app_name }}.
+            &copy; {{ 'now'|date('Y') }}. All rights reserved. {{ app_name|trans }}.
         </p>
     </div>
 </div>
