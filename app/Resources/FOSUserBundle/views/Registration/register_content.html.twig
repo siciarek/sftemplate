@@ -2,6 +2,20 @@
 
     {{ form_start(form) }}
 
+        {% set err = form_errors(form) ~
+        form_errors(form.first_name) ~
+        form_errors(form.last_name) ~
+        form_errors(form.username) ~
+        form_errors(form.email) ~
+        form_errors(form.plainPassword.first) ~
+        form_errors(form.plainPassword.second)  %}
+
+    {% if err != '' %}
+    <div class="alert">
+    {{ err|raw }}
+    </div>
+    {% endif %}
+
     <div class="input-group">
         <span class="input-group-addon">{{ form_label(form.first_name) }}</span>
         {{ form_widget(form.first_name, {attr: { class: 'form-control' }}) }}
@@ -37,3 +51,10 @@
     {{ form_end(form) }}
 
 </form>
+
+<script>
+    $(document).ready(function(){
+        var submitCaption = $('button[id$="_save"]').html();
+        $('button[id$="_save"]').html('<i class="icon-save"></i> ' + submitCaption);
+    });
+</script>

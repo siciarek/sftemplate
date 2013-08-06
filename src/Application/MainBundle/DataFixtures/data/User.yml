@@ -12,7 +12,7 @@ User:
     -
         username      : 'siciarek'
         password      : 'password'
-        email         : 'siciarek@gmail.com'
+        email         : 'createnewevent@gmail.com'
         firstname     : 'Jacek'
         lastname      : 'Siciarek'
         roles         : ['ROLE_USER']

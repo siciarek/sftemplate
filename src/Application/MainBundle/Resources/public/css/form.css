@@ -14,12 +14,12 @@ div.input-group {
     margin-bottom: 16px;
 }
 
-button.btn {
-    width: 180px !important;
+.form-horizontal button.btn {
+    width: 160px !important;
 }
 
 span.input-group-addon {
-    width: 180px;
+    width: 160px;
     text-align: right;
 }
 
