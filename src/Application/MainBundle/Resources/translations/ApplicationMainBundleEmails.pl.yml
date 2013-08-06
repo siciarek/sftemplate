@@ -1,0 +1,24 @@
+registration:
+    subject: "[POTWIERDZENIE REJESTRACJI] %username%"
+    message:
+        html: |
+            <h1>Witaj %username%!</h1>
+
+            <p>Aby zakończyć aktywację konta - proszę kliknij w poniższy link:</p>
+
+            <p><a href="%confirmationUrl%">CONFIRM REGISTRATION</a>.</p>
+
+            <p>Z poważaniem,</p>
+
+            <p>Zespół %app_name%.</p>
+
+        txt: |
+            Witaj %username%!
+
+            Aby zakończyć aktywację konta - proszę kliknij w poniższy link:
+
+            %confirmationUrl%
+
+            Z poważaniem,
+
+            Zespół %app_name%.

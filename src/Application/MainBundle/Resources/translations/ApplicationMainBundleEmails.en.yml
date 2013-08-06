@@ -1,0 +1,24 @@
+registration:
+    subject: "[REGISTRATION CONFIRMATION] %username%"
+    message:
+        html: |
+            <h1>Hello %username%!</h1>
+
+            <p>To finish activating your account - please click following link:</p>
+
+            <p><a href="%confirmationUrl%">CONFIRM REGISTRATION</a>.</p>
+
+            <p>Regards,</p>
+
+            <p>%app_name% Team.</p>
+
+        txt: |
+            Hello %username%!
+
+            To finish activating your account - please click following link:
+
+            %confirmationUrl%
+
+            Regards,
+
+            %app_name% Team.
