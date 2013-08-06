@@ -20,8 +20,8 @@ sonata_doctrine_orm_admin:
                 datetime: ApplicationMainBundle:CRUD:show_datetime.html.twig
 
 sonata_admin:
-    title:      Panel Administracyjny
-    title_logo: /bundles/applicationmain/images/logo.png
+    title:      Admin
+    title_logo: /bundles/applicationmain/images/picture.png
     persist_filters: true
     templates:
         layout: ApplicationMainBundle:Admin:standard_layout.html.twig
@@ -63,7 +63,7 @@ sonata_admin:
                     - application.main.admin.page
 
             media:
-                label: "Galerie fotografii"
+                label: "Galleries"
                 items:
                     - sonata.media.admin.gallery
                     - sonata.media.admin.media

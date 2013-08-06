@@ -1,0 +1,15 @@
+/* ADMIN PREVIEW PAGE */
+
+div.tabbable {
+    display: none;
+}
+
+form.form-horizontal {
+    background: transparent;
+    position: fixed;
+    padding: 4px;
+    left: 0;
+    top: 0;
+    z-index: 150000;
+    margin: 0;
+}

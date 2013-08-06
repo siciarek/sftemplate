@@ -9,6 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Page
 {
+    public function __toString() {
+        return $this->getTitle()?:'';
+    }
+
     /**
      * @var integer
      */

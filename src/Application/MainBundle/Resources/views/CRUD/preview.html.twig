@@ -4,26 +4,17 @@
 {% block stylesheets %}
     {% stylesheets "@ApplicationMainBundle/Resources/public/css/admin/preview.css" output="css/admin/preview.css" %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>{% endstylesheets %}
-    <style type="text/css">
-        div.under-construction:after {
-            content: "<{{ "page.under.construction"|trans() }}>";
-        }
-    </style>
 {% endblock %}
 
 {% block body %}
     {{ parent() }}
     {{ block('parentForm') }}
-
-    <section class="m text-container">
-        {{ object.content | raw }}
-    </section>
-
+    {{ object.content | raw }}
 {% endblock %}
 
 {% block formactions %}
-    <input class="btn btn-primary" type="submit" name="btn_preview_approve"
+    <input style="opacity:0.7" class="btn btn-primary" type="submit" name="btn_preview_approve"
            value="{{ 'btn_preview_approve'|trans({}, 'SonataAdminBundle') }}"/>
-    <input class="btn btn-danger" type="submit" name="btn_preview_decline"
+    <input style="opacity:0.7" class="btn btn-danger" type="submit" name="btn_preview_decline"
            value="{{ 'btn_preview_decline'|trans({}, 'SonataAdminBundle') }}"/>
 {% endblock %}

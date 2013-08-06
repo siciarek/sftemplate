@@ -29,6 +29,16 @@ class LoadPageData extends BaseFixture
                 'enabled' => true,
                 'content' => file_get_contents(__DIR__ . '/../data/privacypolicy.html')
             ),
+            array(
+                'title'   => 'Terms',
+                'enabled' => true,
+                'content' => file_get_contents(__DIR__ . '/../data/terms.html')
+            ),
+            array(
+                'title'   => 'Contact',
+                'enabled' => true,
+                'content' => file_get_contents(__DIR__ . '/../data/contact.html')
+            ),
         );
 
         foreach ($pages as $obj) {
