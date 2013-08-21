@@ -40,23 +40,4 @@ services:
         calls:
              - [setAttribute, [%pdo.attr_errormode%, %pdo.errormode_exception%]]
 
-framework:
-    session:
-        name: %session_cookie_name%
-        cookie_lifetime: 7200 # two hours
-        handler_id: session.handler.pdo
-
-
-#    session:
-#        name:
-#        cookie_lifetime:
-#        cookie_path:
-#        cookie_domain:
-#        cookie_secure:
-#        cookie_httponly:
-#        gc_divisor:
-#        gc_probability:
-#        gc_maxlifetime:
-#        save_path:
-
 

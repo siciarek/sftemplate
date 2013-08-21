@@ -1,0 +1,63 @@
+
+#board .red {
+    color: red;
+}
+
+
+#board .path {
+    background-color: silver;
+}
+
+#board .green {
+    color: green;
+}
+
+#board .blue {
+    color: blue;
+}
+
+#board .orange {
+    color: orange;
+}
+
+#board .fuchsia {
+    color: fuchsia;
+}
+
+#board .silver {
+    color: #c0c0c0;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    vertical-align: middle;
+    text-shadow: 2px 2px 3px grey;
+}
+
+.icon-blank:before {
+    content: " ";
+}
+
+div#board {
+    display: table;
+    border-collapse: collapse;
+}
+
+#board div[id^="kulki-row-"] {
+    display: table-row;
+}
+
+#board div[id^="kulki-cell-"] {
+    text-align: center;
+    font-size: 2em;
+    display: table-cell;
+    width: 46px !important;
+    max-width: 46px !important;
+    height: 46px !important;
+    border: 1px solid gray;
+    cursor: pointer;
+    color: transparent !important;
+}
+
+#board div[id^="kulki-cell-"]:hover {
+    background-color: #EEEEEE;
+}

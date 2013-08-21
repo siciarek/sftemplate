@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% set title = 'Kulki' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/games/kulki.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+
+    {#<script type="text/javascript" src="/maze/demo/jquery-stl/jquery.stl.js"></script>#}
+    {#<script type="text/javascript" src="/maze/demo/jquery-stl/jquery.stl/jquery.stl.deque.js"></script>#}
+    {#<script type="text/javascript" src="/maze/demo/jquery-stl/jquery.stl/jquery.stl.stack.js"></script>#}
+    {#<script type="text/javascript" src="/maze/jquery.maze.js"></script>#}
+
+
+    <script src="{{ asset('js/games/kulki.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+
+    <h1>{{ title }}</h1>
+
+    <p><a href="javascript:reset()" class="btn btn-primary">reset</a> Score: <span id="score">0</span></p>
+
+    <div id="board"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <p class="modal-title">{{ title }}</p>
+                </div>
+                <div class="modal-body">
+                    <i class="icon-question-sign"></i> YOU WIN! Would you like to repeat?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="location.reload()" class="btn btn-primary">Repeat</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <pre id="temp"></pre>
+
+{% endblock %}

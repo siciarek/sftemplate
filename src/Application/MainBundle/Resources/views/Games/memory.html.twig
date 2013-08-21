@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/games/memory.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/games/memory.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+    <h1>Memory</h1>
+
+    <div id="board"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <p class="modal-title">Memory</p>
+                </div>
+                <div class="modal-body">
+                    <i class="icon-question-sign"></i> YOU WIN! Would you like to repeat?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="location.reload()" class="btn btn-primary">Repeat</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}

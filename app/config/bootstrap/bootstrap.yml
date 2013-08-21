@@ -2,6 +2,8 @@ assetic:
 
     assets:
 
+# MAIN LAYOUT
+
         main_css:
             inputs:
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/fonts.css
@@ -10,6 +12,39 @@ assetic:
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/footer.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/photogallery.css
             output: css/main.css
+
+# GAMES:
+
+        kulki_css:
+            inputs:
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/games/kulki.css
+            output: css/games/kulki.css
+            filters:
+                - lessphp
+                - yui_css
+
+        kulki_js:
+            inputs:
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/js/games/pathfinder.js
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/js/games/kulki.js
+            output: js/games/kulki.js
+#            filters:
+#                - yui_js
+
+        memory_css:
+            inputs:
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/games/memory.css
+            output: css/games/memory.css
+            filters:
+                - lessphp
+                - yui_css
+
+        memory_js:
+            inputs:
+                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/js/games/memory.js
+            output: js/games/memory.js
+            filters:
+                - yui_js
 
 # BOOTSTRAP
 

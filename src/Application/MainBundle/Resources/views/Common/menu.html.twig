@@ -1,5 +1,7 @@
 
 <div class="navbar navbar-static-top">
+    {#{{ app.request.attributes.get('_route')|split('_')[1]|var_dump|raw }}#}
+    {#{{ app.request.attributes.get('_route_params')|var_dump|raw }}#}
     <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
@@ -10,15 +12,14 @@
             {{ app_name|trans }}</a>
         <div class="nav-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url('_homepage') }}">Home</a></li>
-                <li><a href="{{ url('_gallery') }}">Gallery</a></li>
-                <li><a href="{{ url('_page_' ~ app.request.locale, {slug: 'contact'}) }}">Contact</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                <li{% if app.request.attributes.get('_route') == '_homepage' %} class="active"{% endif %}><a href="{{ url('_homepage') }}">Home</a></li>
+                <li{% if app.request.attributes.get('_route') == '_gallery' %} class="active"{% endif %}><a href="{{ url('_gallery') }}">Gallery</a></li>
+                <li{% if app.request.attributes.get('_route')|split('_')|length >= 2 and app.request.attributes.get('_route')|split('_')[1] == 'page' and app.request.attributes.get('_route_params')['slug'] is defined and app.request.attributes.get('_route_params')['slug'] == 'contact' %} class="active"{% endif %}><a href="{{ url('_page_' ~ app.request.locale, {slug: 'contact'}) }}">Contact</a></li>
+                <li class="dropdown{% if app.request.attributes.get('_route')|split('_')|length >= 2 and app.request.attributes.get('_route')|split('_')[1] == 'games' %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'Games'|trans }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Info&hellip;</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Author&hellip;</a></li>
+                        <li><a href="{{ path('_games_memory') }}">Memory</a></li>
+                        <li><a href="{{ path('_games_kulki') }}">Kulki</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -30,7 +31,7 @@
                     </ul>
                 </li>
                 {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <li><a href="{{ url('fos_user_registration_register') }}">Register</a></li>
+                <li{% if app.request.attributes.get('_route') == 'fos_user_registration_register' %} class="active"{% endif %}><a href="{{ url('fos_user_registration_register') }}">Register</a></li>
                 {% endif %}
             </ul>
 
