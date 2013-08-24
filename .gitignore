@@ -14,7 +14,7 @@
 .buildpath
 .project
 
-/temp
+/temp*
 /web/tmp
 
 composer.phar
