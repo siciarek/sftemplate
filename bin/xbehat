@@ -1,7 +1,1 @@
-#!/usr/bin/env sh
-SRC_DIR="`pwd`"
-cd "`dirname "$0"`"
-cd "../vendor/siciarek/symfony-utils-bundle/bin/behat"
-BIN_TARGET="`pwd`/xbehat"
-cd "$SRC_DIR"
-"$BIN_TARGET" "$@"
+../vendor/siciarek/symfony-utils-bundle/bin/behat/xbehat

@@ -50,7 +50,8 @@ assetic:
 
         bootstrap_css:
             inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/css/bootstrap.css
+                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/dist/css/bootstrap.css
+                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/dist/css/bootstrap-theme.css
             output: css/bootstrap.css
             filters:
                 - lessphp
@@ -59,7 +60,7 @@ assetic:
 
         bootstrap_js:
             inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/js/bootstrap.js
+                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/dist/js/bootstrap.js
             output: js/bootstrap.js
             filters:
                 - yui_js

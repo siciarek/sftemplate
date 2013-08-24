@@ -3,6 +3,7 @@
 
 <project name="sesservice" basedir=".">
 
+    <property name="php" value="/usr/local/php5.4/bin/php" />
     <property name="user.bundle.name" value="ApplicationSonataUserBundle" />
     <property name="main.bundle.name" value="ApplicationMainBundle" />
     <property name="main.bundle.web.dir" value="applicationmain"/>
@@ -94,16 +95,16 @@
     <target name="all" depends="build, ax, cc"/>
 
     <target name="rs">
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console sonata:page:update-core-routes --site=all"/>
         </exec>
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console sonata:page:create-snapshots --site=all"/>
         </exec>
     </target>
 
     <target name="ge">
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console doctrine:generate:entities ${main.bundle.name} --path=src --no-backup"/>
         </exec>
     </target>
@@ -111,23 +112,23 @@
 
     <target name="db">
 
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console doctrine:database:drop --force"/>
         </exec>
 
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console doctrine:database:create"/>
         </exec>
 
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console doctrine:schema:update --force"/>
         </exec>
 
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console doctrine:migrations:migrate --no-interaction"/>
         </exec>
 
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console -vvv doctrine:schema:validate"/>
         </exec>
 
@@ -147,17 +148,17 @@
     </target>
 
     <target name="acl">
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console sonata:admin:setup-acl"/>
         </exec>
 
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console sonata:admin:generate-object-acl"/>
         </exec>
     </target>
 
     <target name="fixtures">
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console doctrine:fixtures:load --no-interaction"/>
         </exec>
     </target>
@@ -166,10 +167,10 @@
     <target name="ax" depends="cc, reset, as"/>
 
     <target name="as">
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console assets:install web"/>
         </exec>
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console assetic:dump --env=prod --no-debug"/>
         </exec>
         <copy verbose="true" todir="web/images">
@@ -191,13 +192,13 @@
     </target>
 
     <target name="cc">
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="app/console cache:clear --env=prod"/>
         </exec>
     </target>
 
     <target name="up">
-        <exec executable="php">
+        <exec executable="${php}">
             <arg line="${composer.phar} --verbose update"/>
         </exec>
     </target>
