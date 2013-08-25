@@ -23,17 +23,6 @@
         {
             "type": "package",
             "package": {
-                "name" : "twitter/bootstrap-compiled",
-                "version" : "dev-master",
-                "dist": {
-                    "url": "https://github.com/twbs/bootstrap/archive/v3.0.0.zip",
-                    "type": "zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                 "name" : "fontawesome/fontawesome",
                 "version" : "dev-master",
                 "dist": {
@@ -89,7 +78,7 @@
         "genemu/form-bundle": "2.2.*",
 
         "fontawesome/fontawesome": "dev-master",
-        "twitter/bootstrap-compiled": "dev-master",
+        "twbs/bootstrap": "dev-master",
         "jquery/jquery": "dev-master",
         "leafo/lessphp": "dev-master",
 

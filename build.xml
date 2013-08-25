@@ -3,7 +3,8 @@
 
 <project name="sesservice" basedir=".">
 
-    <property name="php" value="/usr/local/php5.4/bin/php" />
+    <loadproperties srcFile="properties.cnf"/>
+
     <property name="user.bundle.name" value="ApplicationSonataUserBundle" />
     <property name="main.bundle.name" value="ApplicationMainBundle" />
     <property name="main.bundle.web.dir" value="applicationmain"/>
@@ -178,6 +179,9 @@
         </copy>
         <copy verbose="true" todir="web/font">
             <fileset dir="vendor/fontawesome/fontawesome/font" includes="**/*"/>
+        </copy>
+        <copy verbose="true" todir="web/fonts">
+            <fileset dir="vendor/twbs/bootstrap/fonts" includes="**/*"/>
         </copy>
         <copy verbose="true" todir="web/css">
             <fileset dir="vendor/fontawesome/fontawesome/css" includes="**/*"/>
