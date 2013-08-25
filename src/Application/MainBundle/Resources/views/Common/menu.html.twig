@@ -31,10 +31,6 @@
                         {% endfor %}
                     </ul>
                 </li>
-                {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <li{% if app.request.attributes.get('_route') == 'fos_user_registration_register' %} class="active"{% endif %}><a
-                                href="{{ url('fos_user_registration_register') }}">Register</a></li>
-                {% endif %}
             </ul>
 
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}

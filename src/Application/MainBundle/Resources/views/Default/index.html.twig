@@ -1,36 +1,52 @@
 {% extends '::base.html.twig' %}
 {% block body %}
 
-        <div class="jumbotron">
-            {% image '@ApplicationMainBundle/Resources/public/images/picture.png' output='images/bigpicture.png' %}<img src="{{ asset_url }}" alt="{{ app_name }}"/>{% endimage %}
-            <h1>{{ app_name|trans }}</h1>
-            <p>{{ app_description }}</p>
-            <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-        </div>
+    <div class="jumbotron">
+        {% image '@ApplicationMainBundle/Resources/public/images/picture.png' output='images/bigpicture.png' %}<img src="{{ asset_url }}" alt="{{ app_name }}"/>{% endimage %}
+        <h1>{{ app_name|trans }}</h1>
 
-        <div class="body-content">
+        <p>{{ app_description }}</p>
 
-            <div class="row home">
-                <div class="col-lg-4">
-                    <h2>First</h2>
-                    <i class="icon-user"></i>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <h2>Second</h2>
-                    <i class="icon-truck"></i>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <h2>Third</h2>
-                    <i class="icon-glass"></i>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-                </div>
+        <p><a class="btn btn-default btn-lg" href="{{ url('_homepage') }}">Learn more &raquo;</a>
+
+            {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <a href="{{ url('fos_user_registration_register') }}" class="btn btn-default btn-lg">{{ 'Register'|trans }} &raquo;</a>
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="body-content">
+
+        <div class="row home">
+            <div class="col-lg-4">
+                <h2>First</h2>
+                <i class="icon-user"></i>
+
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
+                    risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
             </div>
+            <div class="col-lg-4">
+                <h2>Second</h2>
+                <i class="icon-truck"></i>
 
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet
+                    risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Third</h2>
+                <i class="icon-glass"></i>
+
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus
+                    commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+                <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+            </div>
         </div>
+
+    </div>
 
 {% endblock %}
