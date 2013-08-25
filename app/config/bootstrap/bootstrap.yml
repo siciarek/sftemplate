@@ -10,7 +10,6 @@ assetic:
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/layout.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/form.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/footer.css
-                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/photogallery.css
             filters:
                 - lessphp
                 - yui_css

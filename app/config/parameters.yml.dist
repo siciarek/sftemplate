@@ -5,6 +5,7 @@ parameters:
     app_name: Hello, World!
     app_description: >
         Symfony2 peoject template, based on twitter bootstrap.
+        Zażółć gęślą jaźń. ZAŻÓŁĆ GĘŚLĄ JAŹŃ.
         Lorem ipsum dolor sit amet, mytilenam Descendi eam ad te in fuerat se vero non coepit amatrix tolle.
         Dicens mea Stet consequat eiusdem ea docentur Hellenicus dixisset.
     app_keywords: hello world, Symfony2, twitter bootstrap, template
