@@ -1,75 +1,45 @@
 assetic:
-
     assets:
 
 # MAIN LAYOUT
 
         main_css:
+            output: css/main.css
             inputs:
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/fonts.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/layout.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/form.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/footer.css
                 - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/photogallery.css
-            output: css/main.css
-
-# GAMES:
-
-        kulki_css:
-            inputs:
-                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/games/kulki.css
-            output: css/games/kulki.css
             filters:
                 - lessphp
                 - yui_css
-
-        kulki_js:
-            inputs:
-                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/js/games/pathfinder.js
-                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/js/games/kulki.js
-            output: js/games/kulki.js
-#            filters:
-#                - yui_js
-
-        memory_css:
-            inputs:
-                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/css/games/memory.css
-            output: css/games/memory.css
-            filters:
-                - lessphp
-                - yui_css
-
-        memory_js:
-            inputs:
-                - %kernel.root_dir%/../src/Application/MainBundle/Resources/public/js/games/memory.js
-            output: js/games/memory.js
-            filters:
-                - yui_js
+                - cssrewrite
 
 # BOOTSTRAP
 
         bootstrap_css:
-            inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/dist/css/bootstrap.css
-                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/dist/css/bootstrap-theme.css
             output: css/bootstrap.css
+            inputs:
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.css
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-theme.css
             filters:
                 - lessphp
                 - yui_css
                 - cssrewrite
 
         bootstrap_js:
-            inputs:
-                - %kernel.root_dir%/../vendor/twitter/bootstrap-compiled/dist/js/bootstrap.js
             output: js/bootstrap.js
+            inputs:
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.js
             filters:
                 - yui_js
 
 # JQUERY:
 
         jquery:
+            output: js/jquery.js
             inputs:
                 - %kernel.root_dir%/../vendor/jquery/jquery/jquery.js
-            output: js/jquery.js
             filters:
                 - yui_js
